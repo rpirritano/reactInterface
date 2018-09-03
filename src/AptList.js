@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 
 
 class AptList extends Component {
+
+
+
   render(){
     return (
       <li className="pet-item media">
+        <div className="media-left">
+          <button className="pet-delete btn btn-xs btn-danger" onClick={this.handleDelete}>
+          <span className="glyphicon glyphicon-remove"></span></button>
+        </div>
         <div className="pet-info media-body">
           <div className="pet-head">
             <span className="pet-name">{this.props.singleItem.petName}</span>
