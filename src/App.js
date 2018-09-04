@@ -11,6 +11,8 @@ class MainInterface extends Component {
     super(props);
     this.state = {
       aptBodyVisible: true, //make false when fix code
+      orderBy: 'petName',
+      orderDir: 'asc',
       data: [
         {
           "id": 0,
@@ -65,8 +67,22 @@ class MainInterface extends Component {
 //  });
 //},
 
+//to reOrder via select dropdown
+//reorder: function(orderBy, orderDir) {
+//  this.setState({
+//    orderBy: orderBy,
+//    orderDir: orderDir
+//  });
+//}
+
+
   render() {
     let filteredApts = this.state.data;
+    let orderBy = this.state.orderBy;
+    let orderDir = this.state.orderDir;
+
+    //TO Do // add a orderBy and order Dir
+
     filteredApts = filteredApts.map(function(item, index) {
       return(
         <AptList key={ index }
@@ -83,7 +99,10 @@ class MainInterface extends Component {
           handleToggle = { this.toggleAddDisplay }
           addApt = { this.addItem }
         />
-        <SearchAppointments />
+        <SearchAppointments
+          orderBy = { this.state.orderBy }
+          orderDir = { this.state.orderDir }
+          onReOrder = { this.reOrder }/>
         <ul className="item-list media-list">{filteredApts}</ul>
       </div>
     )
