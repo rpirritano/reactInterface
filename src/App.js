@@ -13,6 +13,7 @@ class MainInterface extends Component {
       aptBodyVisible: true, //make false when fix code
       orderBy: 'petName',
       orderDir: 'asc',
+      queryText: ' ',
       data: [
         {
           "id": 0,
@@ -75,11 +76,29 @@ class MainInterface extends Component {
 //  });
 //}
 
+//searchApts(q) {
+//  this.setState({
+//    queryText: q
+//  });
+//}
 
   render() {
-    let filteredApts = this.state.data;
+    let filteredApts = this.state.data; //let filteredApts = []; when adding search
     let orderBy = this.state.orderBy;
     let orderDir = this.state.orderDir;
+    let queryText = this.state.queryText;
+    // let myAppointments = this.state.myAppointments; change when adding search
+
+//    myAppointments.forEach(function(item) {
+//      if(
+//        (item.petName.toLowerCase().indexOf(queryText) != -1) ||
+//        (item.ownerName.toLowerCase().indexOf(queryText) != -1) ||
+//        (item.aptDate.toLowerCase().indexOf(queryText) != -1) ||
+//        (item.aptNotes.toLowerCase().indexOf(queryText) != -1)
+//      ) {
+//        filteredApts.push(item);
+//      }
+//    })
 
     //TO Do // add a orderBy and order Dir
 
@@ -102,7 +121,9 @@ class MainInterface extends Component {
         <SearchAppointments
           orderBy = { this.state.orderBy }
           orderDir = { this.state.orderDir }
-          onReOrder = { this.reOrder }/>
+          onReOrder = { this.reOrder }
+          onSearch = { this.searchApts }
+        />
         <ul className="item-list media-list">{filteredApts}</ul>
       </div>
     )
