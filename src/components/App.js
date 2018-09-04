@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './App.css'
-import './wisdompetlogo.svg'
+import '../stylesheets/App.css'
+import '../wisdompetlogo.svg'
 import AptList from './AptList'
 import AddAppointment from './AddAppointment'
 import SearchAppointments from './SearchAppointments'
