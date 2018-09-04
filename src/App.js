@@ -3,6 +3,8 @@ import './App.css'
 import './wisdompetlogo.svg'
 import AptList from './AptList'
 import AddAppointment from './AddAppointment'
+import SearchAppointments from './SearchAppointments'
+
 
 class MainInterface extends Component {
   constructor(props) {
@@ -81,6 +83,7 @@ class MainInterface extends Component {
           handleToggle = { this.toggleAddDisplay }
           addApt = { this.addItem }
         />
+        <SearchAppointments />
         <ul className="item-list media-list">{filteredApts}</ul>
       </div>
     )
